@@ -7,7 +7,7 @@ mongoose.connect(
  
 
 const userSchema = new mongoose.Schema({
-  username: {
+  email: {
     type: String,
     required: true,
     unique: true,
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     trim: true,
     maxLength: 50,
   },
-  lastName: {
+  lastname: {
     type: String,
     required: true,
     trim: true,
