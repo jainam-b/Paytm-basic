@@ -5,9 +5,9 @@ const zod =require("zod");
 const jwt=require("jsonwebtoken");
 const {JWT_SECRET}=require("../config");
 const {User}=require("../db/db")
-
+const {authmiddleware}=require("../middlewares/authmiddleware")
 const signupBody=zod.object({
-    email:zod.string() ,
+    email:zod.string().email() ,
     firstname: zod.string(),
     lastname: zod.string(),
     password:zod.string().min(8)
@@ -52,6 +52,19 @@ router.post("/signup",async(req,res)=>{
     })
      
 
+})
+
+
+// route to update the info of users
+
+router.put("/update",authmiddleware,async(req,res)=>{
+    await User.updateOne({_id:req.userId},req.body)
+    res.json({
+        msg:"User updated success"
+    })
+    
+    
+    
 })
 
 module.exports=router
