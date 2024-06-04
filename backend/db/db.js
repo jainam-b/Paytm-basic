@@ -1,57 +1,51 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
 require('dotenv').config();
-
-mongoose.connect(
-  process.env.DB_URL
-);
- 
-
+mongoose.connect("mongodb+srv://jainamb:jainamBagrecha@cluster0.h5mn9fs.mongodb.net/paytm");
 const userSchema = new mongoose.Schema({
-  email: {
+  username: {
     type: String,
     required: true,
     unique: true,
     trim: true,
     lowercase: true,
-    minLength: 3,
-    maxLength: 30,
+    minlength: 3,
+    maxlength: 50,
   },
   password: {
     type: String,
     required: true,
-    minLength: 6,
+    minlength: 6,
   },
   firstName: {
     type: String,
     required: true,
     trim: true,
-    maxLength: 50,
+    maxlength: 50,
   },
-  lastname: {
+  lastName: {
     type: String,
     required: true,
     trim: true,
-    maxLength: 50,
+    maxlength: 50,
   },
 });
 
-const accountSchema=new mongoose.Schema({
-  userId:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"User",
-    required:true
+const accountSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
   },
-  balance:{
-    type:Number,
-    required:true
+  balance: {
+    type: Number,
+    required: true
   }
-})
-
-const Account = mongoose.model("Account", accountSchema);
+});
 
 const User = mongoose.model("User", userSchema);
+const Account = mongoose.model("Account", accountSchema);
+
 module.exports = {
   User,
   Account,
-  
 };
