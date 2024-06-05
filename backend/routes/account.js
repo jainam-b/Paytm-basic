@@ -8,6 +8,8 @@ const { default: mongoose } = require('mongoose');
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjVmM2FmYjAyYmNjMGJmNzEwZDQ2MTMiLCJpYXQiOjE3MTc1MTcwNTF9.g38Wj_qyjTlVTYGo1J8ryww_9iFf6pwod5LFIB-DVEA
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjVmM2QyZWU5NDBhZGNhNzk1MGUyZTUiLCJpYXQiOjE3MTc1MTc2MTR9.AlfVr6eR0VLAU23Wie3l_Bt8BAXeui5eNS7z88p2hlk
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjVmM2Q2NDRlNTQzYjc0ZTE4MzViMmIiLCJpYXQiOjE3MTc1MTc2Njh9.afh2Obg53c4yC6TdybCYjMlYL2QWQAGkE8D3BPhA_TU
+
+
 router.get("/account/balance", authmiddleware, async (req, res) => {
   const userId = req.userId;
   console.log(userId);
