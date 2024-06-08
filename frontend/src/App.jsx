@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./components/Signup";
-import Signin from "./components/Signin";
-import Dashboard from "./components/Dashboard";
-import SendMoney from "./components/SendMoney";
+import Signup from "./page/Signup";
+import Signin from "./page/Signin";
+import Dashboard from "./page/Dashboard";
+import {SendMoney} from "./page/SendMoney";
+// import {NavbarWithMegaMenu} from "./components/Navbar";
+
 
 
 
@@ -15,6 +17,8 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/send" element={<SendMoney />} />
+                    {/* <Route path="/try" element={<NavbarWithMegaMenu />} /> */}
+
         </Routes>
       </BrowserRouter>
     </>
