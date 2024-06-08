@@ -88,7 +88,7 @@ const Signup = () => {
                 }
               );
               localStorage.setItem("token", response.data.token);
-              window.location.href="/dashboard"
+              window.location.href = "/dashboard";
             }}
             className="mt-6"
             fullWidth
