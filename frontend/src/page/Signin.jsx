@@ -7,12 +7,12 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import axios from "axios";
-
+import {useNavigate} from "react-router-dom"
 const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   var token = localStorage.getItem(token);
-  console.log(token);
+  const navigate=useNavigate();
   return (
     <div className="flex items-center justify-center min-h-screen ">
       <Card color="transparent" shadow={false}>
@@ -81,8 +81,8 @@ const Signin = () => {
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             Already have an account?{" "}
-            <a href="#" className="font-medium text-gray-900">
-              Sign In
+            <a href="/signup" className="font-medium text-gray-900">
+              Sign Up
             </a>
           </Typography>
         </form>
