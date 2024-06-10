@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.connect("mongodb://localhost:27017/paytm?replicaSet=rs0")
-// mongoose.connect("mongodb+srv://jainamb:jainamBagrecha@cluster0.h5mn9fs.mongodb.net/paytm");
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
